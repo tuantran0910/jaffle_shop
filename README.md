@@ -31,31 +31,29 @@ git clone https://github.com/tuantran0910/jaffle_shop.git
 cd jaffle_shop
 ```
 
-2. Install uv (Modern Python package installer):
+2. Install **uv** (Modern Python package installer):
 
-2.1. Windows:
+    **2.1. Windows**
+    ```bash
+    powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+    ```
 
-```bash
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
+    **2.2. Linux/MacOS**
+    ```bash
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
 
-2.2. Linux/MacOS:
+    **2.3. Pip (if you prefer)**
+    ```bash
+    pip install uv
+    ```
 
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
+    **2.4. Homebrew (MacOS)**
+    ```bash
+    brew install uv
+    ```
 
-2.3. Pip (if you prefer):
-```bash
-pip install uv
-```
-
-2.4. Homebrew (MacOS):
-```bash
-brew install uv
-```
-
-3. Create, install dependencies and activate virtual environment:
+3. Create, install dependencies, and activate the virtual environment:
 ```bash
 uv sync --frozen
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
