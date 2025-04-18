@@ -1,0 +1,11 @@
+[project]
+name = "jaffle-shop"
+version = "0.1.0"
+description = "This a sample dbt project using Jaffle Shop dataset"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "dbt-core==1.9.4",
+    "dbt-duckdb==1.9.1",
+    "duckcli>=0.2.1",
+]

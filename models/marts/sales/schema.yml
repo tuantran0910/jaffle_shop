@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: rpt_sales_metrics
+    description: This table has basic information about sales metrics, as well as some derived facts based on payments
+
+    columns:
+      - name: status
+        description: The status of the order
+        tests:
+          - accepted_values:
+              values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+      - name: avg_order_value
+        description: Average order value (AUD) of the order
+        tests:
+          - not_null

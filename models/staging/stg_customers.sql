@@ -1,22 +1,22 @@
-with source as (
+{{
+    config(
+        materialized = 'view',
+    )
+}}
 
-    {#-
-    Normally we would select from the table here, but we are using seeds to load
-    our data in this project
-    #}
-    select * from {{ ref('raw_customers') }}
+WITH 
+    source as (
+        SELECT *
+        FROM {{ ref('raw_customers') }}
+    ),
 
-),
+    renamed as (
+        SELECT
+            id as customer_id,
+            first_name,
+            last_name
+        FROM source
+    )
 
-renamed as (
-
-    select
-        id as customer_id,
-        first_name,
-        last_name
-
-    from source
-
-)
-
-select * from renamed
+SELECT *
+FROM renamed
